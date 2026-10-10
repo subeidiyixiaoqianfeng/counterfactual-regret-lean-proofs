@@ -1,0 +1,208 @@
+{
+  "revision": "v33",
+  "numbered_results": 13,
+  "modules": 102,
+  "declarations": 816,
+  "new_declarations": 74,
+  "new_modules": [
+    "ImperfectGrowth"
+  ],
+  "new_proofs_compiled": true,
+  "all_local_sources_recompiled": true,
+  "all_local_sources_hash_validated": true,
+  "cold_mathlib_rebuild": false,
+  "automatic_log_to_native_instance": false,
+  "english_to_type_machine_verified": false,
+  "concrete_joint_native_instance_proved": true,
+  "instance_scope": "Two specified native models. The original verified-template model and the repeated type-local model with finite fallible testing. The new native pointer, retained registry and actual program objective are connected by explicit proofs. Direct and reference-transfer bounds are distinguished. Neither model verifies arbitrary deployed LLM code.",
+  "results": [
+    {
+      "label": "prop:wellposed",
+      "targets": [
+        "DRGPR.NativeSemantics.Execution.loss_measurable",
+        "DRGPR.NativeSemantics.Execution.loss_integrable",
+        "DRGPR.NativeSemantics.Execution.expected_bounds",
+        "DRGPR.NativeSemantics.Realization.expected_total"
+      ],
+      "assumptions": "Normalized measurable causal kernels, measurable unit scores, exact own-law realization"
+    },
+    {
+      "label": "lem:stopped",
+      "targets": [
+        "DRGPR.FiniteObservation.Round.estimate_mean",
+        "DRGPR.FiniteObservation.Round.weighted_second",
+        "DRGPR.StoppedObservation.Protocol.stopped_unbiased",
+        "DRGPR.StoppedObservation.Protocol.stopped_second"
+      ],
+      "assumptions": "Finite event alphabets, positive draw and accepted-observation probabilities, accepted-score identity, deterministic finite slot cap, activity determined from completed histories"
+    },
+    {
+      "label": "thm:selection",
+      "targets": [
+        "DRGPR.DependentSelection.expected_growing_selection",
+        "DRGPR.PaperV17Correspondence.explicit_second_moment",
+        "DRGPR.PaperV17Correspondence.expected_selection_endpoints"
+      ],
+      "assumptions": "Actual growing exponential-weights recurrence, stochastic transitions, nonnegative estimates, supported predictable path, uniform code bound, explicit cumulative raw second-moment envelope, integrability and valid reference moments under the same experiment law"
+    },
+    {
+      "label": "thm:native",
+      "targets": [
+        "DRGPR.NativeFamily.own_coupling_counterfactual",
+        "DRGPR.PaperV17Correspondence.endpoint_telescope",
+        "DRGPR.PaperV17Correspondence.exact_budget"
+      ],
+      "assumptions": "Nonempty comparator family, coherent own-law realizations, uniform directed certificates, code and rate shared across comparators"
+    },
+    {
+      "label": "cor:native",
+      "targets": [
+        "DRGPR.NativeNoRegret.budget_tends_zero",
+        "DRGPR.NativeFamily.own_coupling_no_regret",
+        "DRGPR.NativeNoRegret.upper_no_regret"
+      ],
+      "assumptions": "Positive horizons, native-transfer witnesses, horizon-dependent budgets uniform across comparators at each horizon, five normalized budget components tend to zero"
+    },
+    {
+      "label": "thm:stability",
+      "targets": [
+        "DRGPR.StateFeedbackStability.actual_loss",
+        "DRGPR.StateFeedbackStability.adaptive_resource_loss",
+        "DRGPR.FeedbackLocalOnly.uniform_local_bound",
+        "DRGPR.CompletedClock.completed_local_only"
+      ],
+      "assumptions": "Finite complete-state kernels and common initial law and score, local TV contract, continuation range at perturbed states, local activity-cost domination and actual hard path budget for resource variant"
+    },
+    {
+      "label": "thm:repair",
+      "targets": [
+        "DRGPR.NativeRepairEndpoint.counterfactual",
+        "DRGPR.NativeRepairEndpoint.no_regret",
+        "DRGPR.FeedbackLocalOnly.local_only_rate",
+        "DRGPR.CompletedClock.completed_local_gap"
+      ],
+      "assumptions": "Reference endpoint identities, original directed witnesses, local resource sides uniformly for learner and comparator, no duplicated endpoint charge, stated asymptotic conditions"
+    },
+    {
+      "label": "thm:local",
+      "targets": [
+        "DRGPR.CompletedNativeV19.Instance.bound",
+        "DRGPR.CompletedNativeV19.variable_family"
+      ],
+      "assumptions": "Finite normalized causal trial kernels, positive conditional validated retained-good hazard, per-task conditional quality, exact generation endpoint decomposition, local full-state deployment/resource contracts, identity inner deployment arrows, explicit remaining reference certificates, uniform comparator envelopes, positive horizons and local asymptotic conditions. Family statement allows horizon-dependent finite trial, episode and state domains, coupling laws, and reference identity domains on a fixed ambient measurable space and comparator index type. It uses the sum of learner and comparator resource envelopes divided by the positive horizon tending to zero.; validated completed-task scoring, explicit T versus T+1 clock, integrable intermediate endpoints, zero terminal resources",
+      "fixed_domain_alternative": "DRGPR.LocalNativeFamily.no_regret"
+    },
+    {
+      "label": "cor:instance",
+      "targets": [
+        "DRGPR.ConcreteReflection.execution_identity",
+        "DRGPR.ConcreteReflection.full_law_normalized",
+        "DRGPR.ConcreteReflection.joint_law_normalized",
+        "DRGPR.ConcreteReflection.native_marginal",
+        "DRGPR.ConcreteReflection.hard_prefix",
+        "DRGPR.ConcreteReflection.full_state_tv",
+        "DRGPR.ConcreteReflection.conditional_main",
+        "DRGPR.ConcreteReflection.instantiated_bound",
+        "DRGPR.ConcreteReflection.family_bound",
+        "DRGPR.ConcreteReflection.square_rate",
+        "DRGPR.ConcreteReflection.no_reflection_linear",
+        "DRGPR.ConcreteReflection.no_regret"
+      ],
+      "assumptions": "Specified finite verified-template model. Fixed fair generic generator, deterministic guided mode, complete validator, k paid attempts, one output-only deployment slip with probability 1/4, native validation-based selection, own-history immediate-repair and fallback comparators. Family k=n+1, N=k^2, T=k+N. Interface bounds are proved from the model, not assumed. The conditional master is invoked through ModelMain.finite_controller_transfer. This is not a deployment-code or arbitrary-LLM guarantee."
+    },
+    {
+      "label": "cor:joint-budget",
+      "targets": [
+        "DRGPR.JointGenerationBudget.geometric_exp",
+        "DRGPR.JointGenerationBudget.matched_budget",
+        "DRGPR.JointGenerationBudget.hard_prefix",
+        "DRGPR.JointGenerationBudget.native_joint",
+        "DRGPR.JointGenerationBudget.uniform_generation",
+        "DRGPR.JointGenerationBudget.exposure_rate",
+        "DRGPR.JointGenerationBudget.quota_exposure",
+        "DRGPR.JointGenerationBudget.quota_cost",
+        "DRGPR.JointGenerationBudget.quota_failure",
+        "DRGPR.JointGenerationBudget.variable_family",
+        "DRGPR.JointGenerationBudget.polynomial_cost",
+        "DRGPR.JointGenerationBudget.polynomial_failure",
+        "DRGPR.JointGenerationBudget.log_failure",
+        "DRGPR.JointGenerationBudget.root_choice",
+        "DRGPR.JointGenerationBudget.root_rate",
+        "DRGPR.JointGenerationBudget.polynomial_allocation",
+        "DRGPR.JointGenerationBudget.polynomial_ratio_rate",
+        "DRGPR.JointGenerationBudget.concrete_compatibility"
+      ],
+      "assumptions": "Fixed causal design. Original native executions and own-law realizations. All original non-generation interfaces, with direct or independently proved deployment certificates. Normalized finite episode kernels, conditional retained-good hazard, local quality, exact generation endpoint identity, uniform comparator envelopes. Prepaid nonnegative cost envelopes and bounded initiated counts on every legal learner prefix. Comparator hard feasibility retained separately. Variable-domain asymptotic theorem derives native regret before applying aggregate remainder/delay, quality and exposure limits. Polynomial illustration has nonnegative integer exponents with positive sum, explicit ceiling quota and a positive quality root."
+    },
+    {
+      "label": "thm:benchmark",
+      "targets": [
+        "DRGPR.SparseFeedbackBenchmark.paid_sparse_capped",
+        "DRGPR.PrimitiveJointBounds.paid_common_model"
+      ],
+      "assumptions": "Binary oblivious base tables, causal primitive phase Master, independent roundwise erasure, paid schedule, m and n positive, B >= 4m, 0 < q <= 1, q^3 T <= m B log B"
+    },
+    {
+      "label": "cor:benchmark",
+      "targets": [
+        "DRGPR.SparseFeedbackBenchmark.sparse_no_regret"
+      ],
+      "assumptions": "The benchmark bound, positive horizons and observation probabilities, normalized information and phase terms tend to zero"
+    },
+    {
+      "label": "prop:imperfect-growth",
+      "targets": [
+        "DRGPR.ImperfectGrowth.raw_validation",
+        "DRGPR.ImperfectGrowth.raw_embedding",
+        "DRGPR.ImperfectGrowth.distinct_policies",
+        "DRGPR.ImperfectGrowth.validator_correct",
+        "DRGPR.ImperfectGrowth.selection_blind",
+        "DRGPR.ImperfectGrowth.expected_step",
+        "DRGPR.ImperfectGrowth.expected_bound",
+        "DRGPR.ImperfectGrowth.clean_failure",
+        "DRGPR.ImperfectGrowth.deployment_gap",
+        "DRGPR.ImperfectGrowth.nonzero_deployment",
+        "DRGPR.ImperfectGrowth.execution_identity",
+        "DRGPR.ImperfectGrowth.epoch_expectation",
+        "DRGPR.ImperfectGrowth.full_execution",
+        "DRGPR.ImperfectGrowth.actual_prefix",
+        "DRGPR.ImperfectGrowth.full_prefix",
+        "DRGPR.ImperfectGrowth.full_regret",
+        "DRGPR.ImperfectGrowth.useful_growth_mean",
+        "DRGPR.ImperfectGrowth.birth_count",
+        "DRGPR.ImperfectGrowth.proactive_execution",
+        "DRGPR.ImperfectGrowth.no_reflection_linear",
+        "DRGPR.ImperfectGrowth.reference_native_marginal",
+        "DRGPR.ImperfectGrowth.conditional_transfer",
+        "DRGPR.ImperfectGrowth.phase_transfer",
+        "DRGPR.ImperfectGrowth.full_transfer",
+        "DRGPR.ImperfectGrowth.family_bound",
+        "DRGPR.ImperfectGrowth.normalized_upper",
+        "DRGPR.ImperfectGrowth.normalized_resources",
+        "DRGPR.ImperfectGrowth.no_regret",
+        "DRGPR.ImperfectGrowth.sublinear_resources",
+        "DRGPR.ImperfectGrowth.reference_terms_vanish",
+        "DRGPR.ImperfectGrowth.useful_growth_unbounded",
+        "DRGPR.ImperfectGrowth.pointer_registered",
+        "DRGPR.ImperfectGrowth.pointer_error",
+        "DRGPR.ImperfectGrowth.executed_task_score",
+        "DRGPR.ImperfectGrowth.retained_correct_iff",
+        "DRGPR.ImperfectGrowth.completed_cost",
+        "DRGPR.ImperfectGrowth.unfinished_cost",
+        "DRGPR.ImperfectGrowth.variable_no_regret",
+        "DRGPR.ImperfectGrowth.actual_task_identity",
+        "DRGPR.ImperfectGrowth.task_execution_identity",
+        "DRGPR.ImperfectGrowth.actual_execution",
+        "DRGPR.ImperfectGrowth.actual_regret",
+        "DRGPR.ImperfectGrowth.actual_no_regret"
+      ],
+      "assumptions": "Specified finite type-local phases, frozen independent fair template generator, m independent fair validation probes, one-sided false acceptance, immutable retained cards, native latest-accepted batching with k paid attempts and N suffix tasks. Nonempty hard-feasible own-law comparator class with nonnegative common scores. Linear no-reflection comparison requires inclusion of the same-generator proactive comparator. Family E=k=m>=2, N=k^3. Full prefix resource cap Ek(m+2). All error and objective bounds derived from the actual law, not assumed. Not arbitrary LLM code, unknown phase schedules, cross-type coupling, or an anytime guarantee."
+    }
+  ],
+  "prior_complete_build": "v30-concrete-native-instance",
+  "current_action": "99 unchanged modules and their provenance validated. JointGenerationBudget and PaperResults freshly compiled. All 101 current sources and logs hash-validated.",
+  "joint_quality_budget_chain_closed": true,
+  "imperfect_repeated_growth_proved": true,
+  "explicit_pointer_program_bridge_verified": true,
+  "variable_comparator_instance_verified": true
+}
